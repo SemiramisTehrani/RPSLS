@@ -1,7 +1,7 @@
 # 5/24/2022 rev.1 : copied from Demo video
 
-
-
+# 5/25/2022 : 
+# AI class (child class) :  will inherit all its member variables from Player class (parent) 
 
 
 
