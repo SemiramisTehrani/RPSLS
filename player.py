@@ -5,13 +5,9 @@
 # 5/26/2022 rev.2 (office hour) :   
 
 
-from typing_extensions import Self
+
 from time import sleep
-from game import Game
 
-
-
-        
 
 
 class Player(): 

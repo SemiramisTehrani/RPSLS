@@ -5,12 +5,13 @@
 
 
 # This child class is upposed to 
-# 1- keep track of game results 
-# 2- ask for human's choice
-# 3- print the choice
+#  1- get the name from game class
+#  2- keep track of game results 
+#  3- ask for human's choice
+#  4- print the choice
 
 
-
+# from game import Game
 from player import Player
 from time import sleep 
 
@@ -19,14 +20,29 @@ class Human(Player) :
     def __init__(self, name) :
         super().__init__(name)
         
-        self.wins = 0
-        self.losses = 0
-        self.ties = 0
-        self.score = 0
+         # not sure about these yet 
+        self.wins = 0    # 5/27/2022 (101 session)simple way to track the win
+        # self.losses = 0
+        # self.ties = 0
+        # self.score = 0
         
         pass
 
-def choose_gesture(self) : 
-        self.gesture_choice = int(input("Press 0 for Rock, 1 for Paper, 2 Scissor, 3 for Lizzard, 4 for Spock"))
+    
+    # Similar to Ai method
+    def choose_gesture(self) : 
+
+        #for gesture in self.gesture_list : 
+            # print(f"Press{self.gesture_list.index(gesture)} for {gesture}")
+            
+        user_input = int(input("Choose a gesture between 0 and 4! "))
+        while not (user_input <= len(self.gesture_list)) :
+            print(f"Invalid selection")
+            user_input = int(input("Choose a gesture between 0 and 4! "))
+        self.selected_starter = self.gesture_list[user_input]
+
         sleep(1)
-        print(f"{self.name} has picked {int(self.gesture_choice)}")
+        print(f"{self.name} has picked {self.selected_starter}")
+        pass
+        
+
