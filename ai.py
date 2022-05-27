@@ -12,13 +12,24 @@ from time import sleep
 class AI(Player) : 
 
     def __init__(self, name) :
-        super().__init__()
+        super().__init__(name)
+        
+        self.wins = 0
+        self.losses = 0
+        self.ties = 0
         self.score = 0
-        self.name = name
+        
 
 
     def choose_guesture(self) : 
-        self.chosen_gesture = str(random.randint(0,4))
-        gesture_list = ["Rock", "Paper", "Scissors" , "Lizard" , "Spock"]
+        # this is replaced by below
+        # self.random_chosen_gesture = str(random.randint(0,4))
+        self.selected_starter = random.choice(self.gesture_list)
+        
+        # this is moved to Player class
+        # gesture_list = ["Rock", "Paper", "Scissors" , "Lizard" , "Spock"]
+        
         sleep(1)
-        print(f"{self.name} has picked {gesture_list[int(self.chosen_gesture)]}")
+        print("Computer made a choice!")
+        print(f"{self.name} has picked {int(self.selected_starter)}")
+        pass
