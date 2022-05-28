@@ -4,6 +4,7 @@
 # human class (child class) : will inherit all its member variables from Player class (parent) 
 # 5/27/2022 rev.2 , session 1o1 : clean up the class , removed extras , fixed for loop 
 # 5/27/2022 rev.3 : final code 
+# 5/27/2022 rev.4 : Dan's feedback video --> adding warning if user accidently enters alphabets/string to choose gesture
 
 
 # This child class is upposed to 
@@ -30,12 +31,16 @@ class Human(Player) :
 
         for gesture in self.gesture_list : 
             print(f"Press {self.gesture_list.index(gesture)} for {gesture}")
-            
-
+ 
         user_input = int(input("Choose a gesture between 0 and 4! "))
         while not (user_input <= len(self.gesture_list) - 1) :
                 print(f"Invalid selection")
                 user_input = int(input("Choose a gesture between 0 and 4! "))
+                
+        if user_input.isstring() :
+            print(f"Invalid selection")
+            user_input = int(input("Choose a gesture between 0 and 4! "))
+
         self.selected_starter = self.gesture_list[user_input]
 
         sleep(1)

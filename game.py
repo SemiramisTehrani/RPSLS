@@ -2,6 +2,7 @@
 # 5/25/2022 , rev.2 : adding comments
 # Mapping game = [ 0 : Rock , 1 : Paper , 2 : Scissors ,  3 : Lizard , 4 : Spock ]
 # 5/27/2022 , rev.3 : 101 session feedbacks & James's video
+# 5/27/2022 , rev4 : Dan's feedback video  --> adding multiplayer (human vs human) game and adding warning if user enters alphabets to choose gesture
 #  
 # 
 # Gmae class
@@ -25,14 +26,16 @@ from ai import AI
 class Game() : 
     def __init__(self):
       
-        self.player_one = Human(input("Enter your name: "))
+        self.player_one = Human(input("Enter your name: "))               # game type :   player 1 Vs player 2   or player 1 Vs player 3  
         self.player_two = AI(("Rose the computer"))
+        self.player_three = Human(input("Enter your name: "))
         self.run_game()     
         pass 
     
     def run_game(self) :
         self.display_greeting()        
-        self.display_rpsls_rules()    
+        self.display_rpsls_rules()  
+        self.choose_game_type()  
         self.play_rounds()  
         
 
@@ -77,6 +80,13 @@ class Game() :
     """ 
         )
 
+    def choose_game_type(self) : 
+        print()
+        self.game_type = int(input("Choose game type : 1 Human Vs Computer , 2 Human Vs Human  ***"))
+        if self.game_type == 1 :
+            print("Here is the game : Human Vs Computer")
+        else :
+            print("Here is the game : Human Vs Human")
 
 
     def play_rounds(self) :
