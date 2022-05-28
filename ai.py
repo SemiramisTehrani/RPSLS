@@ -2,6 +2,7 @@
 
 # 5/25/2022 : 
 # AI class (child class) :  will inherit all its member variables from Player class (parent) 
+# 5/227/2022 rev. 3 : all done, good to go
 
 
 # This child class is upposed to 
@@ -19,16 +20,13 @@ class AI(Player) :
 
     def __init__(self, name) :
         super().__init__(name)
-        
-        # not sure about these yet 
         self.wins = 0
-        #self.losses = 0
-        #self.ties = 0
-        # self.score = 0
+        pass
         
 
 # this doesn't return any thing 
-    def choose_guesture(self) : 
+    def choose_gesture(self) : 
+
         self.selected_starter = random.choice(self.gesture_list)
         
         sleep(1)

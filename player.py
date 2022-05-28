@@ -2,7 +2,7 @@
 
 # 5/25/2022 rev.1 : James's help 
 # Player class (parent class) : Player stores similarities of Ai and Humnan classes
-# 5/26/2022 rev.2 (office hour) :   
+# 5/26/2022 rev.2 (office hour) : good to go . done   
 
 
 
