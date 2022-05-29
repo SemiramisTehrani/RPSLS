@@ -4,7 +4,7 @@
 # human class (child class) : will inherit all its member variables from Player class (parent) 
 # 5/27/2022 rev.2 , session 1o1 : clean up the class , removed extras , fixed for loop 
 # 5/27/2022 rev.3 : final code 
-# 5/27/2022 rev.4 : Dan's feedback video --> adding warning if user accidently enters alphabets/string to choose gesture
+# 5/27/2022 rev.4 : Dan's feedback video --> adding warning if user accidently enters alphabets/string to choose gesture --> can't get it worked so far 5/29/2022
 
 
 # This child class is upposed to 

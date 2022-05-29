@@ -6,6 +6,7 @@
 # 5/29/2022 , rev. 5 : 
 #                       Added second human player , the game is running for both H Vs H and H Vs computer so far no error. 
 #                       can't fix alphabet entry error yet , comement the line out in human.py
+#                       added ore comment to keep my sanity
 #
 # 
 # Gmae class
@@ -14,14 +15,15 @@
 #   2-1 : greeting
 #   2-2 : game rules
 #   2-3 : diplay chosen gestures
-#   2-4 : determining & showing winner for the first round 
-#   2-5 : determining & showing winner for the second round 
-#   2-6 : determining & showing winner for the third round
-#   2-7 : end game   
-#   2-8 : determining & showing final result 
+#   2-4 : choosing game type
+#   2-5 : determining & showing winner for the first round 
+#   2-6 : determining & showing winner for the second round 
+#   2-7 : determining & showing winner for the third round
+#   2-8 : end game   
+#   2-9 : determining & showing final result 
 
 
-from player import Player
+from player import Player      # I think I didn't use this at all here
 from human import Human
 from ai import AI
 
@@ -29,7 +31,7 @@ from ai import AI
 class Game() : 
     def __init__(self):
       
-        self.player_one = Human(input(" Player # 1 ,  Enter your name : "))               # game type :   player 1 Vs player 2   or player 1 Vs player 3  
+        self.player_one = Human(input(" Player # 1 ,  Enter your name : "))          
         # self.player_two = AI(print("Player # 2 , Rose the computer "))
         # self.player_three = Human(input("Player # 2 , Enter your name : "))
         self.run_game()     
@@ -38,7 +40,7 @@ class Game() :
     def run_game(self) :
         self.display_greeting()        
         self.display_rpsls_rules()  
-        self.choose_game_type()  
+        self.choose_game_type()             # game type : Player 1 (Human) Vs Player 2 (computer)   or Player 1 (Human) Vs Player 2 (Human)
         self.play_rounds()  
         
 
