@@ -3,7 +3,10 @@
 # Mapping game = [ 0 : Rock , 1 : Paper , 2 : Scissors ,  3 : Lizard , 4 : Spock ]
 # 5/27/2022 , rev.3 : 101 session feedbacks & James's video
 # 5/27/2022 , rev4 : Dan's feedback video  --> adding multiplayer (human vs human) game and adding warning if user enters alphabets to choose gesture
-#  
+# 5/29/2022 , rev. 5 : 
+#                       Added second human player , the game is running for both H Vs H and H Vs computer so far no error. 
+#                       can't fix alphabet entry error yet , comement the line out in human.py
+#
 # 
 # Gmae class
 # 1- inquery humna name
@@ -26,9 +29,9 @@ from ai import AI
 class Game() : 
     def __init__(self):
       
-        self.player_one = Human(input("Enter your name: "))               # game type :   player 1 Vs player 2   or player 1 Vs player 3  
-        self.player_two = AI(("Rose the computer"))
-        self.player_three = Human(input("Enter your name: "))
+        self.player_one = Human(input(" Player # 1 ,  Enter your name : "))               # game type :   player 1 Vs player 2   or player 1 Vs player 3  
+        # self.player_two = AI(print("Player # 2 , Rose the computer "))
+        # self.player_three = Human(input("Player # 2 , Enter your name : "))
         self.run_game()     
         pass 
     
@@ -85,9 +88,10 @@ class Game() :
         self.game_type = int(input("Choose game type : 1 Human Vs Computer , 2 Human Vs Human  ***"))
         if self.game_type == 1 :
             print("Here is the game : Human Vs Computer")
+            self.player_two = AI(print("Player # 2 , Rose the computer "))
         else :
             print("Here is the game : Human Vs Human")
-
+            self.player_two = Human(input("Player # 2 , Enter your name : "))
 
     def play_rounds(self) :
         # player to playe best 2 out of 3.
@@ -95,31 +99,32 @@ class Game() :
                 self.player_one.choose_gesture()
                 self.player_two.choose_gesture()
 
+
                 if self.player_one.selected_starter == self.player_two.selected_starter :
                     print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,It is a tie")
+                
                 elif self.player_one.selected_starter == "Rock" and ((self.player_two.selected_starter == "Scissors") or (self.player_two.selected_starter == "Lizard")):
                     print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
-                  
                     self.player_one.wins =  self.player_one.wins + 1
+                
                 elif self.player_one.selected_starter == "Paper" and ((self.player_two.selected_starter == "Rock") or (self.player_two.selected_starter == "Spock")):
                     print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
-                    
                     self.player_one.wins =  self.player_one.wins + 1 
+                
                 elif self.player_one.selected_starter == "Scissors" and ((self.player_two.selected_starter == "Paper") or (self.player_two.selected_starter == "Lizard")):
                     print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
-                    
                     self.player_one.wins =  self.player_one.wins + 1 
+                
                 elif self.player_one.selected_starter == "Lizard" and ((self.player_two.selected_starter == "Paper") or (self.player_two.selected_starter == "Spock")):
                     print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
-                                        
                     self.player_one.wins =  self.player_one.wins + 1
+                
                 elif self.player_one.selected_starter == "Spock" and ((self.player_two.selected_starter == "Scissors") or (self.player_two.selected_starter == "Rock")):
-                                         
                     print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
                     self.player_one.wins =  self.player_one.wins + 1
+                
                 else :
                     print(f"{self.player_two.name} picked {self.player_two.selected_starter} , {self.player_two.name} is the winner!")
-                        
                     self.player_two.wins = self.player_two.wins +1
                 
                 
