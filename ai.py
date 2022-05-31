@@ -21,6 +21,7 @@ class AI(Player) :
     def __init__(self, name) :
         super().__init__(name)
         self.wins = 0
+        self.name = "Rose"
         pass
         
 

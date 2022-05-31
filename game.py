@@ -106,27 +106,27 @@ class Game() :
                     print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,It is a tie")
                 
                 elif self.player_one.selected_starter == "Rock" and ((self.player_two.selected_starter == "Scissors") or (self.player_two.selected_starter == "Lizard")):
-                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
+                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner!")
                     self.player_one.wins =  self.player_one.wins + 1
                 
                 elif self.player_one.selected_starter == "Paper" and ((self.player_two.selected_starter == "Rock") or (self.player_two.selected_starter == "Spock")):
-                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
+                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner!")
                     self.player_one.wins =  self.player_one.wins + 1 
                 
                 elif self.player_one.selected_starter == "Scissors" and ((self.player_two.selected_starter == "Paper") or (self.player_two.selected_starter == "Lizard")):
-                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
+                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner!")
                     self.player_one.wins =  self.player_one.wins + 1 
                 
                 elif self.player_one.selected_starter == "Lizard" and ((self.player_two.selected_starter == "Paper") or (self.player_two.selected_starter == "Spock")):
-                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
+                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner!")
                     self.player_one.wins =  self.player_one.wins + 1
                 
                 elif self.player_one.selected_starter == "Spock" and ((self.player_two.selected_starter == "Scissors") or (self.player_two.selected_starter == "Rock")):
-                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner")
+                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} ,{self.player_one.name} is the winner!")
                     self.player_one.wins =  self.player_one.wins + 1
                 
                 else :
-                    print(f"{self.player_two.name} picked {self.player_two.selected_starter} , {self.player_two.name} is the winner!")
+                    print(f"{self.player_one.name} picked {self.player_one.selected_starter} and {self.player_two.name} picked {self.player_two.selected_starter} , {self.player_two.name} is the winner!")
                     self.player_two.wins = self.player_two.wins +1
                 
                 
